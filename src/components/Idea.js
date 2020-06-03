@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 //import IdeaCard from './IdeaCard';
+import './Idea.css'
 
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -19,43 +20,39 @@ const Idea = ({textState, boolState, setTextState, setBoolState, onToggle}) => {
     const grid = gridStyle();
     const button = buttonStyle();
     return(
-        <div>
-            <div className = {grid.root}>
-                <Grid container spacing={1}>
-                    <Grid item xs ={12}>
-                        <Paper className={grid.paper}> 
-                            <Grid container item xs={12} spacing={1}>
-                                <Paper className={grid.subHead}><h1>What is your starting point?</h1></Paper>
-                            </Grid>
-                            <FormControl component="fieldset">
-                                <RadioGroup aria-label="startPoint" name="startPoint" onChange={e => setBoolState(e.target.value)} value={boolState}>
-                                    <FormControlLabel value="idea" control={<StyledRadio />} label="I will describe my product idea below." />
-                                    <FormControlLabel value="technology" control={<StyledRadio />} label="I will describe a technology I want to commercialize below." />
-                                </RadioGroup>
-                            </FormControl>
-                            <form className={classes.root} noValidate autoComplete="off">
-                                <TextField
-                                    id="outlined-multiline-static"   
-                                    multiline
-                                    rows={10}
-                                    defaultValue=""
-                                    variant="outlined"
-                                    color = "secondary"
-                                    value={textState}
-                                    onChange = {e => setTextState(e.target.value)}
-                                />
-                            </form>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin} onClick= {onToggle}>
-                                Get Market Intel
-                            </Button>
-                            <div>
-                                *Note: All information you enter is treated as confidential and will not be saved.
-                            </div>
-                        </Paper>
-                    </Grid>
-                </Grid>
+            <div className = 'main-body'>
+                <div className = 'header'>
+                    <h1>What is your starting point?</h1>
+                </div>
+                <div className = 'body-form'>
+                  <FormControl component="fieldset">
+                      <RadioGroup aria-label="startPoint" name="startPoint" onChange={e => setBoolState(e.target.value)} value={boolState}>
+                          <FormControlLabel value="idea" control={<StyledRadio />} label="I will describe my product idea below." />
+                          <FormControlLabel value="technology" control={<StyledRadio />} label="I will describe a technology I want to commercialize below." />
+                      </RadioGroup>
+                  </FormControl>
+                </div>
+                <form className={classes.root} noValidate autoComplete="off">
+                     <TextField
+                         id="outlined-multiline-static"   
+                         multiline
+                         rows={10}
+                         defaultValue=""
+                         variant="outlined"
+                         color = "secondary"
+                         value={textState}
+                         onChange = {e => setTextState(e.target.value)}
+                     />
+                  </form>
+                  <div>
+                  <Button variant="contained" size="medium" color="primary" className={button.margin} onClick= {onToggle}>
+                      Get Market Intel
+                  </Button>
+                  </div>
+                  <div>
+                      *Note: All information you enter is treated as confidential and will not be saved.
+                  </div>
             </div>
-        </div>
     
     )
 }
@@ -161,63 +158,5 @@ function StyledRadio(props) {
         />  
     );
 }
-
-/*class Idea extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {radioVal: 'idea', description: ' '}
-
-        this.handleRadioChange = this.handleRadioChange.bind(this);
-        this.handleDescChange = this.handleDescChange.bind(this);
-        //this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleRadioChange(event) {
-        this.setState({radioVal: event.target.value});
-    }
-
-    handleDescChange(event) {
-        this.setState({description: event.target.value});
-    }
-
-    render() {
-        const classes = useStyles();
-        const grid = gridStyle();
-        const button = buttonStyle();
-
-        return(
-            <div className = {grid.root}>
-                <Grid container spacing={3}>
-                    <Grid item xs ={12}>
-                        <Paper className={grid.paper}> 
-                            <FormControl component="fieldset">
-                                <RadioGroup aria-label="startPoint" name="startPoint" onChange={this.handleRadioChange}>
-                                    <FormControlLabel value="idea" control={<StyledRadio />} label="I will describe my product idea below."/>
-                                    <FormControlLabel value="technology" control={<StyledRadio />} label="I will describe a technology I want to commercialize below." />
-                                </RadioGroup>
-                            </FormControl>
-                            <form className={classes.root} noValidate autoComplete="off" onChange={this.handleDescChange}>
-                                <TextField
-                                    id="outlined-multiline-static"   
-                                    multiline
-                                    rows={10}
-                                    defaultValue=""
-                                    variant="outlined"
-                                    color = "secondary"
-                                />
-                            </form>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin}>
-                                Get Market Intel
-                            </Button>
-                            <div>
-                                *Note: All information you enter is treated as confidential and will not be saved.
-                            </div>
-                        </Paper>
-                    </Grid>
-                </Grid>
-            </div>
-        )
-    }
-}*/
 
 export default Idea;

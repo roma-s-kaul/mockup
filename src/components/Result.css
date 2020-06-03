@@ -3,29 +3,45 @@
     width: 100%;
     justify-content: center;
     padding: 1em;
+    padding-bottom: 1%;
     padding-left: 50px;
     padding-right: 50px;
-    background-color: grey;
+    background-color:#D3D3D3;
     color: black;
     font-size: 18px;
     height: 100%;
-    text-align: center;
 }
 
 .header {
     width: 100%;
-    height: 100px;
     padding-right: 0px;
     padding-left: 0px;
-    padding-top: 2%;
-    border: 5px solid gray;
+    border: 5px solid #D3D3D3;
   
     background-color:#325ea8;
     color: white;
     text-align: center;
 }
 
-.body-form {
-    padding-top: 2%;
+.body {
+    text-align: center;
+    
 }
+
+.divider{
+    width:30%;
+    height:auto;
+    display:inline-block;
+}
+
+.divider-mini{
+    width:2%;
+    height:auto;
+    display:inline-block;
+}
+
+.bottom-button {
+    text-align: center;
+}
+
 

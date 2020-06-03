@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import './Result.css'
 
 const styles = {
     container: {
@@ -50,39 +51,35 @@ const Result = ({onToggle}) => {
     const button = buttonStyle();
 
     return(
-        <div>
-            <div className = {grid.root}>
-                <Grid container spacing={3}>
-                    <Grid item xs ={12}>
-                        <Paper className={grid.paper}> 
-                        <Grid container item xs={12} spacing={1}>
-                            <Paper className={grid.paper}><h1>What is your starting point?</h1></Paper>
-                        </Grid>
-                        <h2><b>YOUR IDEA IS A NEW PRODUCT!</b>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin} onClick={onToggle}>
-                                Edit description
-                            </Button>
-                        </h2>
-                        <div>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin}>
-                                Show Competitors
-                            </Button>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin}>
-                                Show Customers
-                            </Button>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin}>
-                                Show Technologies
-                            </Button>
-                        </div>
-                        <div>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin}>
-                                Print Report
-                            </Button>
-                        </div>
-                        </Paper>
-                    </Grid>
-                </Grid>
-            </div>
+        <div className = 'main-body'>
+                <div className = 'header'>
+                    <h1>Results: Market Intelligence</h1>
+                </div>
+                <div className = 'body'>
+                    <h2><b>YOUR IDEA IS A NEW PRODUCT!</b>
+                        <div className="divider-mini"/>
+                        <Button variant="contained" size="medium" color="primary" className={button.margin} onClick={onToggle}>
+                            Edit description
+                        </Button>
+                    </h2>
+                    <Button variant="contained" size="medium" color="primary" className={button.margin}>
+                        Show Competitors
+                    </Button>
+                    <div className="divider"/>
+                    <Button variant="contained" size="medium" color="primary" className={button.margin}>
+                        Show Customers
+                    </Button>
+                    <div className="divider"/>
+                    <Button variant="contained" size="medium" color="primary" className={button.margin}>
+                        Show Technologies
+                    </Button>
+                        
+                    <div className = 'bottom-button'>
+                        <Button variant="contained" size="medium" color="primary" className={button.margin}>
+                            Print Report
+                        </Button>
+                    </div>
+                </div>
         </div>
     
     );

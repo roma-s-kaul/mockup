@@ -1,13 +1,17 @@
 .main-footer {
-    color: white;
-    background-color: #325ea8;
-    padding-top: 0em;
-    position: absolute;
-    bottom: 0;
+    box-sizing: border-box;
     width: 100%;
+    justify-content: center;
+    background-color: #325ea8;
+    color: white;
+    
+    position: absolute;
     text-align:center;
-    font-size: 1.4rem;
+    font-size: 18px;
 }
+
+
+
 a {
     color: white;
   }

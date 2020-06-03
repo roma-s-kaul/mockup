@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Result from './Result';
 import Header from './Header';
 
+
 function App() {
   const [showResultState, setResultState] = useState(true)
   const [textState, setTextState] = useState('');
@@ -14,8 +15,9 @@ function App() {
       <div className="content-wrap"> 
         <Header />
        { showResultState ? <Idea textState={textState} boolState={boolState} setTextState={setTextState} setBoolState={setBoolState} onToggle={() => setResultState(!showResultState)} /> : <Result onToggle={() => setResultState(!showResultState)} /> } 
-      </div>
+      
       <Footer />
+      </div>
     </div>
   );
 }
