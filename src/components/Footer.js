@@ -5,18 +5,23 @@ const Footer = () => {
     return(
         <div className = 'main-footer'>
             <div className = 'container'>
-                <div className='row'>
-                    <p className = "col-sm">
-                        <li><a href='https://www.google.co.in/?gws_rd=ssl'> Watch Video Tutorials </a></li>
-                        <li><a href='https://www.google.co.in/?gws_rd=ssl'> Who We Are and Our Mission </a></li>
-                        <li><a href='https://www.google.co.in/?gws_rd=ssl'> Additional Entrepreneurship Links </a></li>
-                    </p>
+                <div className='row' style={{
+                    display: 'flex',
+                    justifyContent: 'space-evenly',
+                    marginTop: '1%'
+                }}> 
+                        <div><a href='https://www.google.co.in/?gws_rd=ssl'> Watch Video Tutorials </a></div> 
+                        <div><a href='https://www.google.co.in/?gws_rd=ssl'> Who We Are and Our Mission </a></div> 
+                        <div><a href='https://www.google.co.in/?gws_rd=ssl'> Additional Entrepreneurship Links </a></div> 
                 </div>
-                <div className='row'>
-                    <p className = "col-sm">
-                        <li><a href='https://www.google.co.in/?gws_rd=ssl'> Business Open Knowledge Network Home </a></li>
-                        <li><a href='https://www.google.co.in/?gws_rd=ssl'> Resources For Women Entrepreneurs </a></li>
-                    </p>
+                <div className='row' style={{
+                    display: 'flex',
+                    justifyContent: 'space-evenly',
+                    marginTop: '1%'
+                    
+                }}> 
+                        <div><a href='https://www.google.co.in/?gws_rd=ssl'> Business Open Knowledge Network Home </a></div>
+                        <div><a href='https://www.google.co.in/?gws_rd=ssl'> Resources For Women Entrepreneurs </a></div>
                 </div>
             </div>
         </div>

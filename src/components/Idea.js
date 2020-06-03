@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 //import IdeaCard from './IdeaCard';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -14,23 +14,21 @@ import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 
 
-/*const Idea = ({title}) => {
+const Idea = ({textState, boolState, setTextState, setBoolState, onToggle}) => {
     const classes = useStyles();
     const grid = gridStyle();
     const button = buttonStyle();
-    const [value, setValue] = React.useState('Controlled');
-    const handleChange = (event) => {
-        setValue(event.target.value);
-      };
-
     return(
         <div>
             <div className = {grid.root}>
-                <Grid container spacing={3}>
+                <Grid container spacing={1}>
                     <Grid item xs ={12}>
                         <Paper className={grid.paper}> 
+                            <Grid container item xs={12} spacing={1}>
+                                <Paper className={grid.subHead}><h1>What is your starting point?</h1></Paper>
+                            </Grid>
                             <FormControl component="fieldset">
-                                <RadioGroup aria-label="startPoint" name="startPoint">
+                                <RadioGroup aria-label="startPoint" name="startPoint" onChange={e => setBoolState(e.target.value)} value={boolState}>
                                     <FormControlLabel value="idea" control={<StyledRadio />} label="I will describe my product idea below." />
                                     <FormControlLabel value="technology" control={<StyledRadio />} label="I will describe a technology I want to commercialize below." />
                                 </RadioGroup>
@@ -43,9 +41,11 @@ import clsx from 'clsx';
                                     defaultValue=""
                                     variant="outlined"
                                     color = "secondary"
+                                    value={textState}
+                                    onChange = {e => setTextState(e.target.value)}
                                 />
                             </form>
-                            <Button variant="contained" size="medium" color="primary" className={button.margin}>
+                            <Button variant="contained" size="medium" color="primary" className={button.margin} onClick= {onToggle}>
                                 Get Market Intel
                             </Button>
                             <div>
@@ -58,7 +58,7 @@ import clsx from 'clsx';
         </div>
     
     )
-}*/
+}
 
 const styles = {
     container: {
@@ -71,7 +71,7 @@ const styles = {
 const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
-        margin: theme.spacing(1),
+        margin: theme.spacing(8),
         width: '100ch',
       },
     },
@@ -84,14 +84,23 @@ const gridStyle = makeStyles((theme) => ({
     paper: {
       padding: theme.spacing(2),
       textAlign: 'center',
-      color: theme.palette.text.secondary,
+      color: '#000000',
       backgroundColor: '#ccc'
     },
+    subHead: {
+        flexGrow: 1,
+        textAlign: 'center',
+        color: 'white',
+        backgroundColor: '#325ea8',
+        padding: theme.spacing(2)
+        
+    }
 }));
 
 const buttonStyle = makeStyles((theme) => ({
     margin: {
       margin: theme.spacing(1),
+      
     },
     extendedIcon: {
       marginRight: theme.spacing(1),
@@ -153,7 +162,7 @@ function StyledRadio(props) {
     );
 }
 
-class Idea extends React.Component {
+/*class Idea extends React.Component {
     constructor(props) {
         super(props);
         this.state = {radioVal: 'idea', description: ' '}
@@ -171,15 +180,11 @@ class Idea extends React.Component {
         this.setState({description: event.target.value});
     }
 
-    /*handleSubmit(event) {
-
-    }*/
-
     render() {
         const classes = useStyles();
         const grid = gridStyle();
         const button = buttonStyle();
-        
+
         return(
             <div className = {grid.root}>
                 <Grid container spacing={3}>
@@ -213,6 +218,6 @@ class Idea extends React.Component {
             </div>
         )
     }
-}
+}*/
 
 export default Idea;
