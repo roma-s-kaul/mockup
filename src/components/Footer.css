@@ -4,14 +4,19 @@
     justify-content: center;
     background-color: #325ea8;
     color: white;
-    
     position: absolute;
     text-align:center;
     font-size: 18px;
+    bottom: 0px
 }
 
 
 
 a {
     color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 25px;
   }

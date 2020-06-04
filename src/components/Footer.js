@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className='row' style={{
                     display: 'flex',
                     justifyContent: 'space-evenly',
-                    marginTop: '1%'
+                    paddingTop: '1%'
                 }}> 
                         <div><a href='https://www.google.co.in/?gws_rd=ssl'> Watch Video Tutorials </a></div> 
                         <div><a href='https://www.google.co.in/?gws_rd=ssl'> Who We Are and Our Mission </a></div> 
@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className='row' style={{
                     display: 'flex',
                     justifyContent: 'space-evenly',
-                    marginTop: '1%'
+                    paddingBottom: '1%'
                     
                 }}> 
                         <div><a href='https://www.google.co.in/?gws_rd=ssl'> Business Open Knowledge Network Home </a></div>
